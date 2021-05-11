@@ -9,9 +9,9 @@ namespace CreateQueue
       return System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
     }
 
-    static string getFreeClimbAccountToken()
+    static string getFreeClimbApiKeys()
     {
-      return System.Environment.GetEnvironmentVariable("AUTH_TOKEN");
+      return System.Environment.GetEnvironmentVariable("API_KEY");
     }
 
     static void Main(string[] args)
@@ -23,7 +23,7 @@ namespace CreateQueue
 
       // Create FreeClimbClient object
       FreeClimbClient client = new FreeClimbClient(getFreeClimbAccountId(),
-                                           getFreeClimbAccountToken());
+                                           getFreeClimbApiKeys());
 
       // Invoke method to create queue metadata
       Queue queue = client.getQueuesRequester.create(options);
