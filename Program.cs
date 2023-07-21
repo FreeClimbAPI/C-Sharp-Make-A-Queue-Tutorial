@@ -25,8 +25,15 @@ namespace CreateQueue
       FreeClimbClient client = new FreeClimbClient(getFreeClimbAccountId(),
                                            getFreeClimbApiKeys());
 
-      // Invoke method to create queue metadata
-      Queue queue = client.getQueuesRequester.create(options);
+       try
+        {
+          // Invoke method to create queue metadata
+          Queue queue = client.getQueuesRequester.create(options);
+        }
+        catch
+        {
+                System.Console.WriteLine("Failed to create queue metadata");
+        }
     }
   }
 }
