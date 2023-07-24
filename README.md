@@ -14,15 +14,15 @@ To get started using a FreeClimb account, follow the instructions [here](https:/
 1. Install the nuget packages necessary using command:
 
    ```bash
-   $ dotnet add package freeclimb-cs-sdk
+   $ dotnet add package freeclimb
    ```
 
 2. Configure environment variables
 
-   | ENV VARIABLE            | DESCRIPTION                                                                                                                                                                             |
-   | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | ACCOUNT_ID              | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard                                                         |
-   | API_KEY              | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard                                               |
+   | ENV VARIABLE | DESCRIPTION                                                                                                                           |
+   | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+   | ACCOUNT_ID   | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard |
+   | API_KEY      | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard    |
 
 ## Runnning the Tutorial
 
@@ -31,6 +31,18 @@ To get started using a FreeClimb account, follow the instructions [here](https:/
    ```bash
    $  dotnet run
    ```
+
+- If you're having issues running the application, remove any other instances of the enviornment varibles being set and paste the ACCOUNT_ID and API_KEY values directly in those fields as strings.
+
+```
+BEFORE:
+   string accountId = System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
+   string apiKey = System.Environment.GetEnvironmentVariable("API_KEY");
+
+AFTER:
+   string accountId = "ACCOUNT_ID";
+   string apiKey = "API_KEY";
+```
 
 ## Getting Help
 

@@ -1,38 +1,37 @@
-﻿using com.freeclimb.api;
-using com.freeclimb.api.queue;
+﻿using freeclimb.Api;
+using freeclimb.Client;
+using freeclimb.Model;
+
 namespace CreateQueue
 {
-  class Program
+  public class Program
   {
-    static string getFreeClimbAccountId()
-    {
-      return System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
-    }
 
-    static string getFreeClimbApiKeys()
+    static void Main()
     {
-      return System.Environment.GetEnvironmentVariable("API_KEY");
-    }
+      Configuration config = new Configuration();
+      config.BasePath = "https://www.freeclimb.com/apiserver";
 
-    static void Main(string[] args)
-    {
+      string accountId = System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
+      string apiKey = System.Environment.GetEnvironmentVariable("API_KEY");
       string alias = "My_First_Queue";
-
-      QueueOptions options = new QueueOptions();
-      options.setAlias(alias); // Set the optional alias
-
-      // Create FreeClimbClient object
-      FreeClimbClient client = new FreeClimbClient(getFreeClimbAccountId(),
-                                           getFreeClimbApiKeys());
+      // Configure HTTP basic authorization: fc
+      config.Username = accountId;
+      config.Password = apiKey;
+      DefaultApi freeclimbClient = new DefaultApi(config);
+      QueueRequest queueRequest = new QueueRequest(alias);
 
        try
         {
           // Invoke method to create queue metadata
-          Queue queue = client.getQueuesRequester.create(options);
+          QueueResult result = freeclimbClient.CreateAQueue(queueRequest);
+          System.Console.WriteLine(result);
         }
-        catch
+        catch(ApiException  e)
         {
-                System.Console.WriteLine("Failed to create queue metadata");
+          System.Console.WriteLine("Exception when calling DefaultApi.CreateAQueue: " + e.Message);
+          System.Console.WriteLine("Status Code: "+ e.ErrorCode);
+          System.Console.WriteLine(e.StackTrace);
         }
     }
   }
