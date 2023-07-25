@@ -17,7 +17,7 @@ To get started using a FreeClimb account, follow the instructions [here](https:/
    $ dotnet add package freeclimb
    ```
 
-2. Configure environment variables
+2. Configure environment variables (in `Properties/launchSettings.json`):
 
    | ENV VARIABLE | DESCRIPTION                                                                                                                           |
    | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -31,18 +31,6 @@ To get started using a FreeClimb account, follow the instructions [here](https:/
    ```bash
    $  dotnet run
    ```
-
-- If you're having issues running the application, remove any other instances of the enviornment varibles being set and paste the ACCOUNT_ID and API_KEY values directly in those fields as strings.
-
-```
-BEFORE:
-   string accountId = System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
-   string apiKey = System.Environment.GetEnvironmentVariable("API_KEY");
-
-AFTER:
-   string accountId = "ACCOUNT_ID";
-   string apiKey = "API_KEY";
-```
 
 ## Getting Help
 
