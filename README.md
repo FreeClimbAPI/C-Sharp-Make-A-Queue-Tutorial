@@ -14,15 +14,15 @@ To get started using a FreeClimb account, follow the instructions [here](https:/
 1. Install the nuget packages necessary using command:
 
    ```bash
-   $ dotnet add package freeclimb-cs-sdk
+   $ dotnet add package freeclimb
    ```
 
-2. Configure environment variables
+2. Configure environment variables (in `Properties/launchSettings.json`):
 
-   | ENV VARIABLE            | DESCRIPTION                                                                                                                                                                             |
-   | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | ACCOUNT_ID              | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard                                                         |
-   | API_KEY              | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard                                               |
+   | ENV VARIABLE | DESCRIPTION                                                                                                                           |
+   | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+   | ACCOUNT_ID   | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard |
+   | API_KEY      | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in Dashboard    |
 
 ## Runnning the Tutorial
 
